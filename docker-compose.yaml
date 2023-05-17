@@ -1,0 +1,17 @@
+version: '3.4'
+
+networks:
+  network-dev:
+    driver: bridge
+
+services:
+  test-db:
+    image: postgres:latest
+    hostname: test-db
+    ports:
+      - "5500:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: exampleuser
+      POSTGRES_DB: exampledb
+      POSTGRES_PASSWORD: examplepw
